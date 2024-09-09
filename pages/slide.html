@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Act6</title>
+    <link rel="stylesheet" href="../assets/css/styleAct6.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/particle-api-js@8/dist/particle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+  <nav>
+    <ul>
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="../pages/temperatura.html">Actividad 3</a></li>
+        <li><a href="../pages/switch.html">Actividad 5</a></li>
+        <li><a href="../pages/slide.html">Actividad 6</a></li>
+    </ul>
+  </nav>
+  <div class="box-canvas">
+    <div class="spotlight"></div>
+    <div class="spotlight-end"></div>
+    <div class="stage">
+      <div class="stand-bottom"></div>
+      <div class="mic-stand"></div>
+      <div class="mic"></div>
+    </div>
+    <div class="container">
+      <div class="horn"></div>
+      <div class="horn right"></div>
+      <div class="head">
+        <div class="eye">
+          <div class="iris"></div>
+        </div>
+        <div class="mouth"></div>
+      </div>
+      <div class="hand"></div>
+      <div class="hand right"></div>
+      <div class="leg"></div>
+      <div class="leg two"></div>
+    </div>
+  </div>
+  <input type="range" min="5" max="20" step="1" value="5" class="slider" id="Ktms">
+  <output for="Ktms" id="Kvaluetms">5</output>
+  <span id="TM">TMS: <span id="tms-value">25</span></span>
+  <div class="card" id="card-anterior">
+      <h3>Valor Anterior de TMS</h3>
+      <p id="valor-anterior">5</p>
+  </div>
+  <div class="card" id="card-nuevo">
+      <h3>Nuevo Valor de TMS</h3>
+      <p id="valor-nuevo">0</p>
+  </div>
+  <script src="../assets/js/appAct6.js"></script>
+</body>
+</html>

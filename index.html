@@ -1,26 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Tribilin</title>
-    <link rel="stylesheet" href="./Actividad 5/style.css">
+    <title>IoT - Particle</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
-
 <body>
-    <div class="switch">
-        <input type="checkbox" id="toggle" />
-        <label for="toggle">
-            <div class="CFL">
-                <div class="bulb"></div>
-                <div class="track"></div>
-            </div>
-        </label>
-        <div class="bg"></div>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="./pages/temperatura.html">Actividad 3</a></li>
+            <li><a href="./pages/switch.html">Actividad 5</a></li>
+            <li><a href="./pages/slide.html">Actividad 6</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="card" onclick="navigateTo('./pages/temperatura.html')">
+            <img src="./assets/images/x" alt="Temperatura">
+            <h3>Temperatura y Humedad</h3>
+        </div>
+        <div class="card" onclick="navigateTo('./pages/switch.html')">
+            <img src="./assets/images/switch.png" alt="Switch">
+            <h3>Switch</h3>
+        </div>
+        <div class="card" onclick="navigateTo('./pages/slide.html')">
+            <img src="./assets/images/slide.png" alt="Slide">
+            <h3>Slide</h3>
+        </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/particle-api-js@10/dist/particle.min.js"></script>
-    <script src="./Actividad 5/config.js"></script>
-    <script src="./Actividad 5/app.js"></script>
+
+    <script src="./assets/js/script.js"></script>
+
 </body>
 </html>

@@ -1,0 +1,365 @@
+:root {
+  --shadow-color: black;
+  --background-color: #000000;
+  --highlight-color: #004268;
+  --spot-color: #D4DA2A;
+  --mike-green: #AED137;
+}
+
+nav {
+  background-color: #19394e;
+  width: 100%;
+  padding: 15px 0;
+  position: fixed; /* Cambia a fixed para que siempre esté visible */
+  top: 0;
+  left: 0;
+  text-align: center;
+  z-index: 1000; /* Asegúrate de que el nav esté encima de otros elementos */
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+nav ul li a:hover {
+  color: #00bcd4;
+}
+
+body {
+  background: var(--background-color);
+  margin: 0;
+  overflow: hidden; /* Evita el scroll */
+}
+
+.box-canvas {
+  position: relative;
+  margin: auto;
+  display: block;
+  width: 600px;
+  height: 600px;
+}
+
+.stage {
+  position: absolute;
+  width: 600px;
+  top: 200px;
+  z-index: 2; /* Eleva el micrófono al frente */
+}
+
+.spotlight {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: var(--spot-color);
+  width: 250px;
+  height: 340px;
+  clip-path: polygon(0 0, 30% 0, 100% 100%, 0% 100%);
+  z-index: 1; /* Mantiene la luz detrás */
+  transition: transform 0.5s ease; /* Añadido para suavizar el movimiento lateral */
+}
+
+.spotlight-end {
+  position: absolute;
+  top: 293px;
+  left: 0;
+  width: 250px;
+  height: 100px;
+  border-radius: 50%;
+  background: #E9EC1D;
+  z-index: 1;
+  transition: transform 0.5s ease; /* Añadido para suavizar el movimiento lateral */
+}
+
+.mic-stand {
+  position: absolute;
+  left: 55%;
+  transform: translateX(-50%);
+  width: 7px;
+  height: 80px;
+  top: 90px;
+  background: linear-gradient(to right, var(--highlight-color), var(--shadow-color));
+  border-radius: 0 0 10% 10% / 0 0 50% 50%;
+  z-index: 4; /* Micrófono adelante */
+}
+
+.stand-bottom {
+  left: 55%;
+  transform: translateX(-50%);
+  position: absolute;
+  width: 46px;
+  height: 25px;
+  border-radius: 50%;
+  background: radial-gradient(circle at top left, var(--highlight-color), var(--shadow-color));
+  top: 160px;
+  z-index: 4;
+}
+
+.mic {
+  position: absolute;
+  width: 45px;
+  height: 15px;
+  top: 85px;
+  background: linear-gradient(var(--highlight-color), var(--shadow-color));
+  transform: rotate(20deg) translateX(-50%);
+  left: 55%;
+  z-index: 8; /* Micrófono al frente */
+}
+
+.mic::before {
+  content: '';
+  position: absolute;
+  left: -20px;
+  top: -5px;
+  width: 25px;
+  height: 25px;
+  background: radial-gradient(circle at top left, var(--highlight-color), var(--shadow-color));
+  border-radius: 50%;
+}
+
+.mic::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 5px;
+  background: linear-gradient(var(--highlight-color), var(--shadow-color));
+  right: -10px;
+  top: 5px;
+}
+
+/* Mike Wazowski */
+.container {
+  position: absolute;
+  top: 180px; /* Ajusta la posición para que Mike esté visible por completo */
+  left: 150px; /* Centrar horizontalmente */
+  width: 300px; /* Aumentar tamaño de Mike */
+  height: 300px;
+  z-index:2; /* Mike delante del micrófono y del spotlight */
+}
+
+.horn {
+  position: absolute;
+  top: 3px;
+  left: 28px;
+  width: 20px;
+  height: 30px;
+  background: #D8E0CD;
+  border-radius: 30% 240% 100% 100%;
+}
+
+.horn.right {
+  border-radius: 240% 30% 100% 100%;
+  left: 100px;
+}
+
+.head {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  background: var(--mike-green);
+  border-radius: 100%;
+}
+
+.eye {
+  z-index: 2;
+  position: absolute;
+  top: 24px;
+  left: 33px;
+  background: #FFF;
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+}
+
+.iris {
+  position: absolute;
+  top: 9px;
+  left: 9px;
+  width: 60px;
+  height: 60px;
+  background: #199E6C;
+  border-radius: 100%;
+}
+
+.iris:before {
+  content: '';
+  position: absolute;
+  left: 45px;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-left: 20px solid #FFF;
+  border-bottom: 10px solid transparent;
+}
+
+.mouth {
+  position: absolute;
+  top: 100px;
+  left: 60px;
+  width: 30px;
+  height: 30px;
+  background: #176A46;
+  border-radius: 100%;
+}
+
+.mouth:after {
+  z-index: 0;
+  content: '';
+  position: absolute;
+  top: -10px;
+  background: var(--mike-green);
+  width: 30px;
+  height: 30px;
+}
+
+.hand {
+  position: absolute;
+  top: 20px;
+  left: -10px;
+  width: 20px;
+  height: 100px;
+  background: var(--mike-green);
+  border-radius: 10px;
+  transform: rotate(140deg);
+}
+
+.hand.right {
+  transform: rotate(40deg);
+  top: 20px;
+  left: 140px;
+}
+
+.leg {
+  position: absolute;
+  top: 140px;
+  left: 43px;
+  width: 20px;
+  height: 60px;
+  background: var(--mike-green);
+}
+
+.leg.two {
+  left: 85px;
+}
+
+.leg:before {
+  content: '';
+  position: absolute;
+  top: 50px;
+  left: -5px;
+  width: 30px;
+  height: 20px;
+  border-radius: 200% 200% 100% 100%;
+  background: var(--mike-green);
+}
+
+/* Input range */
+input[type="range"] {
+  position: absolute;
+  bottom: 450px;
+  left: 45%;
+  transform: translateX(-50%);
+  width: 300px;
+  z-index: 2;
+  -webkit-appearance: none; /* Elimina el estilo predeterminado del navegador */
+  appearance: none;
+  height: 13px; /* Altura de la barra */
+  background: linear-gradient(90deg, #76C7C0, #4C9F70); /* Fondo degradado */
+  border-radius: 5px; /* Bordes redondeados */
+  outline: none; /* Elimina el contorno */
+  transition: background 0.3s ease; /* Transición suave */
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px; /* Ancho del control */
+  height: 20px; /* Altura del control */
+  background-color: #FFD700; /* Color del control (thumb) */
+  border: 2px solid #4C9F70; /* Borde del control */
+  border-radius: 50%; /* Forma circular */
+  cursor: pointer; /* Cambia el cursor al pasar por encima */
+  transition: background 0.3s ease; /* Transición suave */
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 20px;
+  cursor: pointer;
+  background: transparent;
+  border-radius: 5px;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background-color: #FFD700;
+  border: 2px solid #4C9F70;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+input[type="range"]::-moz-range-track {
+  width: 100%;
+  height: 20px;
+  background: transparent;
+  border-radius: 5px;
+}
+
+#Ktms {
+  -webkit-appearance: none;
+  height: 2px;
+  background: #ffffff;
+  color: yellow;
+  top: 430px;
+  left: 350px;
+  width: 140px;
+  position: absolute;
+}
+
+#Kvaluetms {
+  color: #ffffff;
+  top: 425px;
+  left: 430px;
+  position: absolute;
+}
+
+#TM {
+  color: #ffffff;
+  top: 90px;
+  left: 200px;
+  position: absolute;
+}
+
+#tms-value {
+  color: #ffffff;
+}
+
+.card {
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+  width: 300px;
+  position: absolute;
+  top: 500px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: black;
+  text-align: center;
+  z-index: 2;
+}
+
+#card-nuevo {
+  top: 600px; /* Espaciado para la segunda tarjeta */
+}

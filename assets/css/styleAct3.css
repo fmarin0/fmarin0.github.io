@@ -1,0 +1,313 @@
+/* NAVBAR */
+
+nav {
+    background-color: #19394e;
+    width: 100%;
+    padding: 15px 0;
+    position: fixed; /* Cambia a fixed para que siempre esté visible */
+    top: 0;
+    left: 0;
+    text-align: center;
+    z-index: 1000; /* Asegúrate de que el nav esté encima de otros elementos */
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+nav ul li a:hover {
+    color: #00bcd4;
+}
+
+/* BODY */
+
+body {
+    background-color: #469CCE;
+    transition: background-color 1s linear;
+    -webkit-transition: background-color 1s linear;
+    -moz-transition: background-color 1s linear;
+    -o-transition: background-color 1s linear;
+}
+
+/* CENTER */
+
+.center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* CIRCLE */
+
+.circle {
+    position: relative;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    width: 23%;
+    min-width: 250px;
+    min-height: 250px;
+    border-radius: 50%;
+    background-color: inherit;
+    border: 8px solid white;
+    overflow: hidden;
+}
+
+.circle:after {
+    display: block;
+    content: "";
+    padding-bottom: 100%;
+}
+
+/* THE CAT */
+
+.cat {
+    position: absolute;
+    bottom: -20px;
+    left: 20%;
+    height: 55%;
+    width: 60%;
+    background-color: #E78336;
+    border-bottom-style: solid;
+    border-bottom-color: #E78336;
+    transition: background-color 1s linear, border-bottom-color 1s linear;
+    -webkit-transition: background-color 1s linear, border-bottom-color 1s linear;
+    -moz-transition: background-color 1s linear, border-bottom-color 1s linear;
+    -o-transition: background-color 1s linear, border-bottom-color 1s linear;
+    animation: bouncy-cat 2s ease-in-out infinite;
+    -webkit-animation: bouncy-cat 2s ease-in-out infinite;
+    -moz-animation: bouncy-cat 2s ease-in-out infinite;
+    -o-animation: bouncy-cat 2s ease-in-out infinite;
+}
+
+.cat:before,
+.cat:after {
+    position: absolute;
+    content: "";
+    bottom: 100%;
+    border-bottom-style: solid;
+    border-bottom-width: 25px;
+    border-bottom-color: inherit;
+}
+
+.cat:before {
+    border-left: 0px solid transparent;
+    border-right: 35px solid transparent;
+}
+
+.cat:after {
+    border-left: 35px solid transparent;
+    border-right: 0px solid transparent;
+    right: 0;
+}
+
+@keyframes bouncy-cat {
+    0% {
+        bottom: -20px;
+    }
+    50% {
+        bottom: -30px;
+    }
+    100% {
+        bottom: -20px;
+    }
+}
+
+/* CAT'S EYES */
+
+.left-eye,
+.right-eye {
+    position: absolute;
+    top: 15%;
+    width: 30%;
+    height: auto;
+    padding-top: 30%;
+    border-radius: 50%;
+    background-color: white;
+    overflow: hidden;
+}
+
+.left-eye {
+    left: 10%;
+}
+
+.right-eye {
+    right: 10%;
+}
+
+.pupil {
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+    width: 80%;
+    height: auto;
+    padding-top: 80%;
+    border-radius: 50%;
+    background-color: black;
+}
+
+.light {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60%;
+    height: auto;
+    padding-top: 60%;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.eyelid {
+    position: absolute;
+    left: -20%;
+    bottom: 120%;
+    width: 140%;
+    height: 140%;
+    background-color: #E78336;
+    transition: background-color 1s linear;
+    -webkit-transition: background-color 1s linear;
+    -moz-transition: background-color 1s linear;
+    -o-transition: background-color 1s linear;
+    transition: bottom 0.5s linear;
+    -webkit-transition: bottom 0.5s linear;
+    -moz-transition: bottom 0.5s linear;
+    -o-transition: bottom 0.5s linear;
+}
+
+/* CAT'S MOUTH */
+
+.mouth {
+    position: absolute;
+    top: 50%;
+    left: 42.5%;
+    width: 15%;
+    height: 13%;
+    border-radius: 0 0 90% 90%;
+    background-color: #F1A9A0;
+    overflow: hidden;
+    transition: border-radius 0.25s linear;
+    -webkit-transition: border-radius 0.25s linear;
+    -moz-transition: border-radius 0.25s linear;
+    -o-transition: border-radius 0.25s linear;
+    transition-delay: 0.25s;
+    -webkit-transition-delay: 0.25s;
+    -moz-transition-delay: 0.25s;
+    -o-transition-delay: 0.25s;
+}
+
+.mouth:before,
+.mouth:after {
+    position: absolute;
+    display: block;
+    content: "";
+    top: 0;
+    border-top: 6px solid white;
+    border-left: 2px solid transparent;
+    border-right: 2px solid transparent;
+}
+
+.mouth:before {
+    left: 10%;
+}
+
+.mouth:after {
+    right: 10%;
+}
+
+/* BUTTON */
+
+.sun-icon {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: #F5D76E;
+    box-shadow: 0px 0px 0px 5px #F7CA18;
+    display: inline-block;
+    position: relative;
+    top: -12.5px;
+    margin-right: 15px;
+}
+
+/* DROP ICON */
+
+.drop-icon {
+    position: relative;
+    width: 40px; /* Tamaño de la gota, ajusta según sea necesario */
+    height: 60px; /* Tamaño de la gota, ajusta según sea necesario */
+    background-color: #3d75ac; /* Color de la gota */
+    border-radius: 50%; /* Redondeo general para el contenedor */
+    clip-path: path('M 20 0 C 35 0 40 20 30 40 C 40 60 20 60 20 40 C 0 60 0 20 20 0 Z'); /* Forma de gota */
+    display: inline-block;
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white; /* Color del símbolo de porcentaje */
+    font-size: 24px; /* Tamaño del símbolo de porcentaje */
+    font-weight: bold; /* Grosor del símbolo de porcentaje */
+}
+
+.drop-icon::before {
+    content: '%';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centra el símbolo dentro de la gota */
+}
+
+/* SWITCH */
+
+.switch {
+    width: 100px;
+    height: 40px;
+    display: inline-block;
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    background-color: white;
+    width: inherit;
+    height: inherit;
+    border-radius: 34px;
+    cursor: pointer;
+}
+
+.slider:before {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    content: "";
+    height: 30px;
+    width: 30px;
+    border-radius: 50px;
+    background-color: #469CCE;
+    transition: .4s, background-color 1s linear;
+    -webkit-transition: .4s, background-color 1s linear;
+    -moz-transition: .4s, background-color 1s linear;
+    -o-transition: .4s, background-color 1s linear;
+}
+
+input:checked + .slider:before {
+    background-color: #2c3e50;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(60px);
+    -ms-transform: translateX(60px);
+    transform: translateX(60px);
+}
